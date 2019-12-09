@@ -1,0 +1,1 @@
+<div id="loader" style="text-align: center;"><img src="{{asset('images/spinner.svg')}}" width="450"></div>

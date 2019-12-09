@@ -1,0 +1,133 @@
+﻿; Domain: coffetools.com
+; Exported (y-m-d hh:mm:ss): 2019-03-01 08:00:00
+;
+; This file is intended for use for informational and archival
+; purposes ONLY and MUST be edited before use on a production
+; DNS server.
+;
+; In particular, you must update the SOA record with the correct
+; authoritative name server and contact e-mail address information,
+; and add the correct NS records for the name servers which will
+; be authoritative for this domain.
+;
+; For further information, please consult the BIND documentation
+; located on the following website:
+;
+; http://www.isc.org/
+;
+; And RFC 1035:
+;
+; http://www.ietf.org/rfc/rfc1035.txt
+;
+; Please note that we do NOT offer technical support for any use
+; of this zone data, the BIND name server, or any other third-
+; party DNS software.
+;
+; Use at your own risk.
+
+
+; SOA Record
+coffetools.com.	3600	 IN 	SOA	ns39.domaincontrol.com.	dns.jomax.net. (
+					2018042540
+					28800
+					7200
+					604800
+					3600
+					) 
+
+; A Records
+@	1800	 IN 	A	195.62.25.200
+acronyms	1800	 IN 	A	195.62.25.202
+ancestors	1800	 IN 	A	195.62.25.201
+barrier	1800	 IN 	A	195.62.25.210
+behalf	1800	 IN 	A	195.62.25.212
+blender	1800	 IN 	A	195.62.25.217
+eastern	1800	 IN 	A	195.62.25.206
+five	1800	 IN 	A	195.62.25.205
+gigabyte	1800	 IN 	A	195.62.25.208
+hart	1800	 IN 	A	195.62.25.216
+ironing	1800	 IN 	A	195.62.25.218
+longer	1800	 IN 	A	195.62.25.207
+markings	1800	 IN 	A	195.62.25.213
+shortages	1800	 IN 	A	195.62.25.204
+sings	1800	 IN 	A	195.62.25.203
+suburb	1800	 IN 	A	195.62.25.209
+terms	1800	 IN 	A	195.62.25.214
+wife	1800	 IN 	A	195.62.25.211
+wolfe	1800	 IN 	A	195.62.25.215
+
+; CNAME Records
+www	3600	 IN 	CNAME	@
+_domainconnect	3600	 IN 	CNAME	_domainconnect.gd.domaincontrol.com.
+
+; MX Records
+
+; TXT Records
+@	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.200 -all"
+acronyms	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.202 -all"
+ancestors	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.201 -all"
+barrier	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.210 -all"
+behalf	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.212 -all"
+blender	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.217 -all"
+eastern	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.206 -all"
+five	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.205 -all"
+gigabyte	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.208 -all"
+hart	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.216 -all"
+ironing	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.218 -all"
+longer	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.207 -all"
+markings	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.213 -all"
+selector1._domainkey	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.acronyms	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.ancestors	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.barrier	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.behalf	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.blender	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.eastern	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.five	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.gigabyte	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.hart	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.ironing	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.longer	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.markings	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.shortages	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.sings	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.suburb	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.terms	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.wife	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+selector1._domainkey.wolfe	1800	 IN 	TXT	"v=DKIM1; g=*; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/yyaSYOI+VwM/YzZ5Idwk2KD4vKmG6g284+RKcAcart87K3FSZZupzp0uEKQ3scmWbZ4uomOoLMwQZPIcCpEuKcjVsk8tz+VtlV5AjMGE4xyQOWuiJBCZUUcQhQZns4QeEeD1VcE2WUEVntkCJNAg7Nx0XUhKNTurjBLVHnTdQQIDAQAB
+"
+shortages	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.204 -all"
+sings	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.203 -all"
+suburb	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.209 -all"
+terms	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.214 -all"
+wife	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.211 -all"
+wolfe	1800	 IN 	TXT	"v=spf1 ip4:195.62.25.215 -all"
+
+; SRV Records
+
+; AAAA Records
+
+; CAA Records
+
+; NS Records
+@	3600	 IN 	NS	ns39.domaincontrol.com.
+@	3600	 IN 	NS	ns40.domaincontrol.com.
+
