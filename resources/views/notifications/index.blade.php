@@ -107,7 +107,7 @@
 							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{-- {{$notification->data['username']}}  --}}created Payment ({{$notification->data['total_price']}} {{$notification->data['currency']}})</a>
 						@endif
 						@if($notification->type == 'App\Notifications\CreateDomainNotification')
-							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{-- {{$notification->data['username']}}  --}}created Domain ({{$notification->data['price']}} {{$notification->data['currency']}})</a>
+							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{-- {{$notification->data['username']}}  --}}created Domain {{-- ({{$notification->data['price']}} {{$notification->data['currency']}}) --}}</a>
 						@endif
 						@if($notification->type == 'App\Notifications\CreateServerNotification')
 							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{-- {{$notification->data['username']}}  --}}created Server ({{$notification->data['price']}} {{$notification->data['currency']}})</a>

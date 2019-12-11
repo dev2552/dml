@@ -23,7 +23,7 @@ class RegistrarResource extends JsonResource
        'customerid' => $this->customerid,
        'registrar_key' => $this->registrar_key,
        'secret' => $this->secret,
-       'website' => $this->website,
+       'website' => $this->checkWebsite($this->website),
        'phone' => $this->phone,
        'address' => $this->address,
        'description' => $this->description,
@@ -36,5 +36,18 @@ class RegistrarResource extends JsonResource
      ];
     }
 
+
+    public function checkWebsite($website)
+    {
+       if( !preg_match("/^https:\/\//", $website) && $website!==null )
+       {
+        return "https://".$website;
+       }
+       return $website;
+    }
+
    
 }
+
+
+//inprod

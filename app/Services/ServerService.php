@@ -48,11 +48,14 @@ class ServerService
 
 	public function checkDomain($data)
 	{
-		if($this->domainRepository->getDomainByDomain($data['main_domain'])->alreadyAssigned)
-		{
-			return true;
-		}
-		return false;
+		// data contains main domain
+		//get server by main domain 
+		//check server status  
+		// if inprod alreadyassigned return true
+		if(!$data["main_domain"]) return false;
+		$server = $this->serverRepository->getServerByDomain($data["main_domain"]);
+		if(!$server) return false;
+		if($server->status()->latest()->orderBy("id","desc")->limit(1)->first()->status === "prod") return true;
 	}
 
 

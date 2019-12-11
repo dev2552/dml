@@ -10,7 +10,7 @@
 			model : {},
 			newModel : {'entered':moment().format('YYYY-MM-DD'),'datex':moment().add(1,'year').format('YYYY-MM-DD'),'is_active':true,'is_expired':false,'status':'NEW','currency':currencies[0]},
 			limits : limits,
-			status : ['NEW','PRODUCTION','CANCELLED'],
+			status : ['NEW','PRODUCTION','CANCELLED','In-Prod'],
 			sDomain : {'champ':'domain','order':'asc'},
 			sPrice : {'champ':'price','order':'asc'},
 			currencies : currencies,
@@ -103,7 +103,7 @@
 			color(status){
 			if(status == 'NEW'){
 				return 'btn-warning';
-			}else if(status == 'PRODUCTION'){
+			}else if(status == 'PRODUCTION' || status == 'In-Prod'){
 				return 'btn-info';
 			}else if(status == 'CANCELLED')
 			{

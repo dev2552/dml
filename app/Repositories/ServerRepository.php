@@ -46,7 +46,7 @@ class ServerRepository
 		$this->geoPlugin->locate($data['main_ip']);
 		//$data['mainIpCountry'] = $this->geoPlugin->countryName;
 		//$data['mainIpCountryCode']=strtolower($this->geoPlugin->countryCode);
-		$data['last_status'] = $status['status'];
+		//$data['last_status'] = $status['status'];
 		//$data['created_by'] = Auth::user()->username;
 		$data['created'] = Carbon::now();
 		$record = $this->serverModel->create($data);
@@ -321,6 +321,14 @@ class ServerRepository
 	public function getModel()
 	{
 		return $this->serverModel;
+	}
+
+
+	public function getServerByDomain($domain)
+	{
+		$server = $this->serverModel->where("main_domain",$domain)->first();
+		if(!$server) return null;
+		return $server;
 	}
 
 	

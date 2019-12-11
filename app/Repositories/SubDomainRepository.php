@@ -20,16 +20,30 @@ class SubDomainRepository
 		$this->subDomainModel->create($data);
 	}
 
+	public function  filterData($model,$data)
+	{
+		$columns = ["ip_id","domain_id","subdomain","is_active","created"];
+
+		foreach ($columns as $column) {
+			$model = $this->setModel($column,$model,$data);
+		}
+
+		return $model;
+	}
+
+	public function setModel($column,$model,$data)
+	{
+		if($data[$column])
+		{
+			return $model->where(function($q)use($data,$column){$q->where($column,$data[$column])->orWhereNull($column);});
+		}
+
+		return $model;
+	}
+
 	public function filter($data)
 	{
-		if(!$data['ip_id']) $data['ip_id'] = '%';
-		if(!$data['domain_id']) $data['domain_id'] = '%';
-		$records = $this->subDomainModel
-		->where('ip_id','like','%'.$data['ip_id'].'%')
-		->where('domain_id','like','%'.$data['domain_id'].'%')
-		->where( function( $query ) use ( $data ){ $query->where( "subdomain","like","%".$data[ "subdomain" ]."%" )->orWhereNull( "subdomain" ); } )
-		->where('is_active','like','%'.$data['is_active'].'%')
-		->where('created','like','%'.$data['created'].'%')
+		$records = $this->filterData($this->subDomainModel,$data)
 		->orderBy('id','desc')
 		->paginate($data['limit']);
 

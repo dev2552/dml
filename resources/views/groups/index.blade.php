@@ -41,8 +41,8 @@
 		 						<tr class="bg-primary">
 		 							<th>Name</th>
 		 							<th>Created</th>
-		 							<th>Created By</th>
-		 							<th>Updated By</th>
+{{-- 		 							<th>Created By</th>
+		 							<th>Updated By</th> --}}
 		 							<th>Edit</th>
 		 						</tr>
 		 					</thead>
@@ -50,7 +50,7 @@
 		 						<tr v-if="groups.length>0" v-for="group in groups">
 		 							<td>@{{group.name}}</td>
 		 							<td>@{{group.created}}</td>
-		 							<td>@{{group.createdBy ? group.createdBy.username : ''}}</td>
+		 						{{-- 	<td>@{{group.createdBy ? group.createdBy.username : ''}}</td> --}}
 		 							<td>@{{group.updatedBy ? group.updatedBy.username : ''}}</td>
 		 							<td>
 		 								<div class="input-group">
@@ -59,17 +59,17 @@
 		 							</td>
 		 						</tr>
 		 						<tr id="spin" style="text-align: center;display: none;">
-		 							<td colspan="5">
+		 							<td colspan="4">
 		 								<img src="{{asset('images/spin.svg')}}" width="400">
 		 							</td>
 		 						</tr>
 		 						<tr v-if="groups.length==0" style="text-align: center;">
-		 							<td colspan="5">
+		 							<td colspan="4">
 		 								No Data!
 		 							</td>
 		 						</tr>
 		 						<tr>
-		 							<td colspan="5">
+		 							<td colspan="4">
 		 								 <ul class="pagination">
 										  	<li  class="page-item" @click="filterGroups(pagination.first)"><a class="page-link" >&laquo;</a></li>
 										    <li :class="{'disabled':!pagination.prev}" class="page-item" @click="filterGroups(pagination.prev)"><a class="page-link">Previous</a></li>

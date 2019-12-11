@@ -39,6 +39,7 @@ class PaymentController extends Controller
     public function store(Request $request){
         $this->authorize('index',PaymentModel::class);
     	$record = $this->paymentRepository->store($request->all());
+        if(!$record) return response()->json(["message"=>"Invalid data"],403);
         $data = ['created'=>$record->created->format('Y-m-d'),
         'currency'=>$record->currency,
         'description'=>$record->description,

@@ -55,6 +55,7 @@
 					</select>--}}
 
 					<div style="overflow: scroll;height: 200px">
+						<p v-if="domainsListLoading">wait...</p>
 						<p style="cursor: pointer;" v-for="domain1 in domainsList" @click="toDomainsList(2,domain1)">@{{ domain1.domain }}</p>
 					</div>
 

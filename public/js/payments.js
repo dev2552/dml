@@ -86,8 +86,7 @@ var app = new Vue({
 				$.notify('Operation done Successfully','success');
 				$('#createPayment').modal('hide');
 			}).catch((err)=>{
-				console.log(err);
-				$.notify(err);
+				$.notify(err.response.data.message);
 			})
 		},
 		filterPayments(url){
@@ -182,7 +181,9 @@ var app = new Vue({
 		},
 		currencyCode(currency)
 		{
-			return this.symbols.find((s)=>(s.currency == currency)).code;
+			var symbol = this.symbols.find((s)=>(s.currency == currency));
+			if(symbol) return symbol.code;
+			return "";
 		},
 		getServers()
 		{

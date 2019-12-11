@@ -37,8 +37,14 @@
 	
 	<tbody>	
 		<tr>
-			<td><input type="text" class="form-control" v-model="filter.ip" @keyup="filterSubDomains()"></td>
-			<td><input type="text" class="form-control" v-model="filter.subdomain" @keyup="filterSubDomains()"></td>
+			<td>
+				<!--<input type="text" class="form-control" v-model="filter.ip" @keyup="filterSubDomains()">-->
+				<select style="width: 250px;" class="ips_select"></select>
+			</td>
+			<td>
+				<!--<input type="text" class="form-control" v-model="filter.subdomain" @keyup="filterSubDomains()">-->
+				<select style="width: 250px;" class="domains_select"></select>
+			</td>
 			<td><input type="text" class="form-control" v-model="filter.domain" @keyup="filterSubDomains()"></td>
 			
 			<td>
@@ -238,6 +244,87 @@
 
 			app.listIps();
 		})
+
+
+		$('.domains_select').select2({
+			allowClear: true,
+
+			placeholder : { id : '' , 'placeholder' : '' },
+
+			ajax : 
+				{
+					url : '{{url('api/getDomains')}}',
+
+					data : function(params)
+					{
+						return { search : params.term , page : params.page };
+					},
+
+					dataType : 'json',
+
+					processResults : function(data)
+					{
+						data.page = data.page || 1;
+
+						return {
+							results : data.data.map(function(item)
+							{
+								return { id : item.id , text : item.domain };
+							}),
+
+							pagination : { more : true }
+						}
+					},
+
+
+				}
+		}).on('change',function()
+		{
+			app.filter.domain_id = this.value;
+
+			app.filterSubDomains();
+		});
+
+
+		$('.ips_select').select2(
+			{
+				allowClear: true,
+
+				placeholder : { id : '' , 'placeholder' : '' },
+				
+				ajax : 
+				{
+					url : '{{url('api/getIps')}}',
+
+					data : function(params)
+					{
+						return { search : params.term , page : params.page };
+					},
+
+					dataType : 'json',
+
+					processResults : function(data)
+					{
+						data.page = data.page || 1;
+
+						return {
+							results : data.data.map(function(item)
+							{
+								return { id : item.id , text : item.ip };
+							}),
+
+							pagination : { more : true }
+						}
+					},
+
+
+				}
+			}).on('change',function()
+		{
+			app.filter.ip_id = this.value;
+
+			app.filterSubDomains();
+		});
 
 </script>
 

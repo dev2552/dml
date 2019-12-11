@@ -13,6 +13,7 @@ var app = new Vue({
 		selectedIp : [],
 		subDomains : [],
 		DKIM : '',
+		domainsListLoading:false,
 	},
 	methods : {
 		load()
@@ -69,15 +70,18 @@ var app = new Vue({
 		},
 		setDomainsList()
 		{
+			this.domainsListLoading=true;
 			if(this.selectedRegistrar == '')
 			{
 				this.domainsList = [];
 				this.selectedDomains = [];
+				this.domainsListLoading=false;
 				return;
 			}
 			axios.get('api/getDomainsList/'+this.selectedRegistrar).then((res)=>
 			{
 				this.domainsList = res.data.data;
+				this.domainsListLoading=false;
 			})
 		},
 		toDomainsList(n,domain)

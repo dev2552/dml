@@ -36,19 +36,19 @@ class DomainService
 
 				$record = $this->domainRepository->create($_data);
 
-				$paymentData = [
-					'type'=>'Domain',
-					'domain_id'=>$record->id,
-					'group_id'=>$record->group->id,
-					'unit_price'=>1,'quantity'=>1,
-					'total_price'=>$record->price,
-					'currency'=>$record->currency,
-					'description'=>'Auto Payment',
+				//$paymentData = [
+					//'type'=>'Domain',
+					//'domain_id'=>$record->id,
+					//'group_id'=>$record->group->id,
+					//'unit_price'=>1,'quantity'=>1,
+					//'total_price'=>$record->price,
+					//'currency'=>$record->currency,
+					//'description'=>'Auto Payment',
 					//'created_by'=>$this->userRepository->getUser()->username,
-					'payment_date'=>now(),
-					'create_date'=>now()];
+					//'payment_date'=>now(),
+					//'create_date'=>now()];
 
-				$paymentRecord = $this->paymentRepository->store($paymentData);
+				//$paymentRecord = $this->paymentRepository->store($paymentData);
 
 				$domainData = ['currency'=>$record->currency,
 		        'datex'=>$record->datex->format('Y-m-d'),

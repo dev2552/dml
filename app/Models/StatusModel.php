@@ -18,6 +18,8 @@ class StatusModel extends Model
 
     public $timestamps = false;
 
+    const CREATED_AT = "created";
+
    public function server()
    {
     return $this->belongsTo(ServerModel::class);

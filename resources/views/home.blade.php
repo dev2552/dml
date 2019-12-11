@@ -598,7 +598,7 @@
         <table class="table table-bordered table-striped">
            <tr>
             <td style="font-weight: bold;">Status:</td>
-            <td><button class="btn" :class="color(selectedRequest._status)">@{{selectedRequest._status}}</button></td>
+            <td><button class="btn" :class="color(selectedRequest.status.status)">@{{selectedRequest.status.status}}</button></td>
            </tr>
             <tr>
             <td style="font-weight: bold;">Type:</td>

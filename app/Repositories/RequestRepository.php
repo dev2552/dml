@@ -1,5 +1,5 @@
 <?php 
-
+//server-blacklist-groups-payment
 namespace App\Repositories;
 
 use App\Http\Resources\RequestResource;
@@ -61,7 +61,7 @@ class RequestRepository
 					->whereRaw(\DB::raw("(select status from status where status.request_id=request.id order by status.id desc  limit 1 ) = '".$data["_status"]."'"));
 					continue; 
 				}
-			$model = $model->where( function( $query ) use ( $data ){ $query->where($column,$data[$column] )->orWhereNull($column); } );
+			$model = $model->where( function( $query ) use ( $data,$column ){ $query->where($column,$data[$column] )->orWhereNull($column); } );
 			}
 			
 		}
@@ -182,15 +182,19 @@ class RequestRepository
 		if($data['requestFilter'])
 		{
 			$records = Auth::user()->group->requests()
-			//->where('_status',$data['requestFilter'])
+			->whereRaw(\DB::raw("(select status from status where status.request_id=request.id order by status.id desc  limit 1 ) = '".$data["requestFilter"]."'"))
 			->orderBy('id','desc')
 			->paginate(10);
 		}
 		else
 		{
 			$records = Auth::user()->group->requests()
-			//->where(function($query){$query->where('_status','New')->orWhere('_status','Inprocess');})
-			//->orderBy('_status','asc')
+			->where(function($query){
+				$query
+			->whereRaw(\DB::raw("(select status from status where status.request_id=request.id order by status.id desc  limit 1 ) = 'New'")) 
+		->orWhereRaw(\DB::raw("(select status from status where status.request_id=request.id order by status.id desc  limit 1 ) = 'Inprocess'")) ;
+				
+			})
 			->orderBy('id','desc')
 			->paginate(10);
 		}

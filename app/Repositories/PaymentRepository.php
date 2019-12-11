@@ -8,8 +8,9 @@ use App\Notifications\CreatePaymentNotification;
 use App\Notifications\PaymentNotification;
 use App\User;
 use Auth;
-use Notification;
 use Carbon\Carbon;
+use Notification;
+use Whoops\Exception\ErrorException;
 
 class PaymentRepository 
 {
@@ -21,7 +22,8 @@ class PaymentRepository
 
 	public function store($data)
 	{
-		//$data['created_by'] = Auth::user()->username;
+		if(!isset($data["type"])) return false;
+		
 		if($data['type'] == 'Server')
 		{
 			if(!isset($data['server_id'])) $data['server_id'] = $data['paymentable']['id'];

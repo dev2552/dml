@@ -18,7 +18,7 @@ var app = new Vue({
 		symbols : data,
 		selectedServer : {'group':{},'domain':{},'provider':{},'status':{}},
 		selectedProvider : {},
-		selectedRequest : {},
+		selectedRequest : {status:[]},
 		serverGroupsId : [],
 		payment : {},
 		requestFilter : null,
@@ -170,6 +170,7 @@ var app = new Vue({
 		},
 		showRequestDetails(request)
 		{
+			console.log(request);
 			this.selectedRequest = request;
 			$('#requestDetails').modal();
 		},
