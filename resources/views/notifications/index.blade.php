@@ -26,7 +26,7 @@
 		</div>
 		<div class="col-md-8">
 			<form action="{{route('notifications.search')}}" method="get">
-				@csrf
+				
 				<div class="row">
 					<div class="col-md-5">
 						<select class="form-control" style="height: 35px;font-size: 0.8rem;" name="type">
@@ -89,31 +89,31 @@
 					<td>
 						@if($notification->type == 'App\Notifications\PaymentNotification')
 							@if($notification->data['renewal'])
-								<a href="{{route('notifications.show',['notification'=>$notification->id])}}">Renewal {{-- By {{$notification->data['payment']['createdBy']['username']}} for --}} {{$notification->data['payment']['type']}}</a> 
+								<a href="{{route('notifications.show',['notification'=>$notification->id])}}">Renewal By {{$notification->data['username']}} for {{$notification->data['payment']['type']}}</a> 
 							@else
-							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">Payment {{-- By {{$notification->data['payment']['createdBy']['username']}} for --}} {{$notification->data['payment']['type']}}</a> 
+							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">Payment By {{$notification->data['username']}} for {{$notification->data['payment']['type']}}</a> 
 							@endif
 						@endif
 						@if($notification->type == 'App\Notifications\RequestNotification')
 							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">New Request By {{$notification->data['request']['user']['username']}}</a>
 						@endif
 						@if($notification->type == 'App\Notifications\StatusNotification')
-							<a href="{{route('notifications.show',['notification'=>$notification->id])}}"><span style="color: black">{{-- {{$notification->data['username']}}</span> --}} Updated  Status ( <span style="color: green">{{$notification->data['subject']}}</span> ) to <span style="color: orange">{!! $notification->data['status']!!}</span></a>
+							<a href="{{route('notifications.show',['notification'=>$notification->id])}}"><span style="color: black">{{$notification->data['username']}}</span> Updated  Status ( <span style="color: green">{{$notification->data['subject']}}</span> ) to <span style="color: orange">{!! $notification->data['status']!!}</span></a>
 						@endif
 						@if($notification->type == 'App\Notifications\CreateIpNotification')
-							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{-- {$notification->data['username']}}  --}}created Ips</a>
+							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{$notification->data['username']}} created Ips</a>
 						@endif
 						@if($notification->type == 'App\Notifications\CreatePaymentNotification')
-							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{-- {{$notification->data['username']}}  --}}created Payment ({{$notification->data['total_price']}} {{$notification->data['currency']}})</a>
+							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{$notification->data['username']}} created Payment ({{$notification->data['total_price']}} {{$notification->data['currency']}})</a>
 						@endif
 						@if($notification->type == 'App\Notifications\CreateDomainNotification')
-							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{-- {{$notification->data['username']}}  --}}created Domain {{-- ({{$notification->data['price']}} {{$notification->data['currency']}}) --}}</a>
+							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{$notification->data['username']}} created Domain {{-- ({{$notification->data['price']}} {{$notification->data['currency']}}) --}}</a>
 						@endif
 						@if($notification->type == 'App\Notifications\CreateServerNotification')
-							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{-- {{$notification->data['username']}}  --}}created Server ({{$notification->data['price']}} {{$notification->data['currency']}})</a>
+							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{$notification->data['username']}} created Server ({{$notification->data['price']}} {{$notification->data['currency']}})</a>
 						@endif
 						@if($notification->type == 'App\Notifications\ServerGroupChangeNotification')
-							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{-- {{$notification->data['username']}}  --}}changed  Server({{$notification->data['server']}}) Group from {{$notification->data['lastGroup']}} to {{$notification->data['currentGroup']}} </a>
+							<a href="{{route('notifications.show',['notification'=>$notification->id])}}">{{$notification->data['username']}} changed  Server({{$notification->data['server']}}) Group from {{$notification->data['lastGroup']}} to {{$notification->data['currentGroup']}} </a>
 						@endif
 					</td>
 					<td>

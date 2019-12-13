@@ -40,7 +40,7 @@ class CreatePaymentNotification extends Notification
             'total_price' => $this->data['total_price'],
             'type' => $this->data['type'],
             'unit_price' => $this->data['unit_price'],
-           // 'username' => $this->data['username'],
+           'username' => $this->data['username'],
         ];
     }
 }

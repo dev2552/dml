@@ -193,7 +193,7 @@
 	@if($notification->type == 'App\Notifications\CreateServerNotification')
 		<p>
 			<span style="text-decoration: underline;font-weight:bold;"> Server : </span>
-			<span> {{$notification->data['name']}} </span>
+			<span> {{$notification->data['s_name']}} </span>
 		</p>
 		<p>
 			<span style="text-decoration: underline;font-weight:bold;"> Date Expiration : </span>

@@ -18,7 +18,7 @@ var app = new Vue({
 				$.notify('Operation done Successfully','success');
 			}).catch((err)=>{
 				console.log(err);
-				$.notify(err);
+				$.notify(err.response.data.message);
 			});
 		},
 		filterGroups(link){

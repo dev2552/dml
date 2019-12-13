@@ -7,6 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Auth;
 
 class PaymentNotification extends Notification
 {
@@ -21,6 +22,7 @@ class PaymentNotification extends Notification
         $this->paymentResource = $paymentResource;
         $this->auto = $auto;
         $this->renewal = $renewal;
+
     }
 
     
@@ -37,6 +39,7 @@ class PaymentNotification extends Notification
            'ips' => $this->paymentResource->server->ips,
            'auto'=>$this->auto,
            'renewal'=>$this->renewal,
+           'username'=>Auth::user()->username,
         ];
     }
 }

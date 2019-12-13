@@ -67,10 +67,8 @@ class ServerController extends Controller
     public function index()
     {
         $this->authorize('index',ServerModel::class);
-        $groups = $this->groupRepository->all();
-        $providers = $this->providerRepository->all();
-        $domains = $this->domainRepository->all();
-        return view('servers.index',['groups'=>$groups,'providers'=>$providers,'domains'=>$domains]);
+       
+        return view('servers.index');
     }
 
    

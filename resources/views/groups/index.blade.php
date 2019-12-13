@@ -51,7 +51,7 @@
 		 							<td>@{{group.name}}</td>
 		 							<td>@{{group.created}}</td>
 		 						{{-- 	<td>@{{group.createdBy ? group.createdBy.username : ''}}</td> --}}
-		 							<td>@{{group.updatedBy ? group.updatedBy.username : ''}}</td>
+		 							{{-- <td>@{{group.updatedBy ? group.updatedBy.username : ''}}</td> --}}
 		 							<td>
 		 								<div class="input-group">
 		 									<button type="submit" class="btn btn-primary shadow-none addon-btn waves-effect waves-light" @click="editGroup(group)">Edit</button>

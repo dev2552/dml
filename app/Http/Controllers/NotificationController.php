@@ -11,6 +11,7 @@ class NotificationController extends Controller
 
 	protected $user;
     protected $request;
+    protected $limit = 10;
 
 	public function __construct(Request $request)
 	{
@@ -22,7 +23,7 @@ class NotificationController extends Controller
 	}
     public function index()
     {
-    	$notifications = $this->user->unreadNotifications()->paginate(10);
+    	$notifications = $this->user->unreadNotifications()->paginate($this->limit);
     	return view('notifications.index',['notifications'=>$notifications]);
     }
 
@@ -63,6 +64,12 @@ class NotificationController extends Controller
             ->get();
         }
 
-        return view('notifications.index',['notifications'=>$notifications,'search'=>true]);
+        return view('notifications.index',[
+            'notifications'=>$notifications,
+            'search'=>true,
+            'type'=>$this->request->type,
+            'start'=>$this->request->start,
+            'end'=>$this->request->end]
+        );
     }
 }

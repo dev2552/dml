@@ -13,6 +13,7 @@ use App\Repositories\UserRepository;
 use App\User;
 use Excel;
 use Illuminate\Http\Request;
+use Auth;
 
 class PaymentController extends Controller
 {
@@ -52,7 +53,7 @@ class PaymentController extends Controller
         'total_price'=>$record->total_price,
         'type'=>$record->type,
         'unit_price'=>$record->unit_price,
-        //'username'=>$record->createdBy->username
+        'username'=>Auth::user()->username,
         ];
         $this->paymentRepository->sendCreateNotification($this->userRepository->roots(),$data);
     }

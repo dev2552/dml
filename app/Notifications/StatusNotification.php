@@ -35,7 +35,7 @@ class StatusNotification extends Notification
 
             'status' => $this->data['status'],
 
-            //'username' => $this->data['username'],
+            'username' => $this->data['username'],
 
             'subject' => $this->data['subject'],
         ];

@@ -95,10 +95,14 @@ var app = new Vue({
 		},
 		getServers(url)
 		{
+			var start = window.performance.now();
 			this.servers = [];
 			$('#spin').toggle();
 			var url = url || 'api/getServers';
 			axios.post(url,this.filter).then((res)=>{
+				var end = window.performance.now();
+				console.log(end-start);
+				console.time("server");
 				this.servers = res.data.data;
 				$('#spin').toggle();
 				this.load();

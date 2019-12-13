@@ -27,7 +27,7 @@ class StatusController extends Controller
         $data = [
             'request'=>$record->request->request,
             'status'=>$record->status,
-           // 'username'=>$record->createdBy->username,
+            'username'=>Auth::user()->username,
             'subject'=>$record->request->subject];
         $this->statusRepository->sendNotificationForRoot($data,$this->userRepository);
     }

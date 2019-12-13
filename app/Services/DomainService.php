@@ -9,6 +9,7 @@ use App\Repositories\DomainRepository;
 use App\Repositories\PaymentRepository;
 use App\Repositories\UserRepository;
 use App\User;
+use Auth;
 
 class DomainService 
 {
@@ -57,7 +58,7 @@ class DomainService
 		        'group'=>$record->group->name,
 		        'price'=>$record->price,
 		        'registrar'=>$record->registrar->name,
-		        'username'=>$this->userRepository->getUser()->username];
+		        'username'=>Auth::user()->username,];
 
 		         $this->domainRepository->sendCreateNotification($this->userRepository->roots(),$domainData);
 			}

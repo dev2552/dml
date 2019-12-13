@@ -25,6 +25,7 @@ class GroupController extends Controller
   
     public function store(Request $request)
     {
+        $request->validate(["name"=>"required"]);
          $this->authorize('index',GroupModel::class);
         return $this->groupRepository->store($request->all());
     }
